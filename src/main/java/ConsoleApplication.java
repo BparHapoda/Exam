@@ -43,7 +43,8 @@ public class ConsoleApplication {
     }
 
     public Menu createMenuApplication() {
-        Menu menu = new Menu("Главное меню :", false);
+        Menu menu = new Menu("Текстовая коллекция version 0.9" +
+                "\n================================", false);
         menu.add("Добавить текстовый документ", this::addDocument);
         menu.add("Открыть текстовый документ", this::openDocument);
         menu.add("Задать корневую папку коллекции", this::changeRootDir);
