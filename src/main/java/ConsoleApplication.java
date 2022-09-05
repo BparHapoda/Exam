@@ -8,10 +8,10 @@ import java.util.Scanner;
 
 
 public class ConsoleApplication {
-    private TextCollection textCollection;
+    private TextStorage textCollection;
 
     public ConsoleApplication() {
-        textCollection = new TextCollection();
+        textCollection = new TextStorage();
     }
 
     public void run() throws IOException {
@@ -102,14 +102,14 @@ public class ConsoleApplication {
         return new Console(12, 100);
     }
 
-    private void showCollection(sort sort) {
+    private void showCollection(Sort sort) {
         for (TextDoc textDoc : textCollection.getSortedCollection(sort)) {
             System.out.print(textDoc.getName() + "\n");
         }
     }
 
     private void showCollection() {
-        showCollection(sort.NAME);
+        showCollection(Sort.NAME);
     }
 
     public void showFileAtributes() {
@@ -139,10 +139,10 @@ public class ConsoleApplication {
 
     public void sortTextCollection (){
         Menu menu4 = new Menu("Сортировка коллекции",false);
-        menu4.add("Сортировка по имени",()->showCollection(sort.NAME));
-        menu4.add("Сортировка по длине текста",()->showCollection(sort.LENGTH));
-        menu4.add("Сортировка по дате создания",()->showCollection(sort.DATE));
-        menu4.add("Сортировка по автору",()->showCollection(sort.AUTHOR));
+        menu4.add("Сортировка по имени",()->showCollection(Sort.NAME));
+        menu4.add("Сортировка по длине текста",()->showCollection(Sort.LENGTH));
+        menu4.add("Сортировка по дате создания",()->showCollection(Sort.DATE));
+        menu4.add("Сортировка по автору",()->showCollection(Sort.AUTHOR));
         menu4.add("Выход",()->menu4.setExit(true));
         menu4.run();
     }

@@ -11,7 +11,7 @@ public interface Storage {
     boolean deleteFile(TextDoc textDoc);
 
 
-    ArrayList<TextDoc> getSortedCollection(sort sort);
+    ArrayList<TextDoc> getSortedCollection(Sort sort);
 
     void createCollection(String rootPath);
 

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
-public class TextCollection implements Storage {
+public class TextStorage implements Storage {
     private String rootPath;
     private final String configFileName = "textcollection.tcol";
 
@@ -21,10 +21,10 @@ public class TextCollection implements Storage {
     }
 
     public ArrayList<TextDoc> getSortedCollection(){
-        return getSortedCollection(sort.NAME);
+        return getSortedCollection(Sort.NAME);
     }
 
-    public ArrayList<TextDoc> getSortedCollection(sort sort){
+    public ArrayList<TextDoc> getSortedCollection(Sort sort){
         ArrayList<TextDoc> textDocs = createFileList();
 
         ArrayList<TextDoc> sortedDocs = new ArrayList<>();
@@ -115,7 +115,7 @@ public class TextCollection implements Storage {
     }
 }
 
-enum sort {
+enum Sort {
     DATE,
     AUTHOR,
     LENGTH,
